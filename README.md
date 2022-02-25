@@ -43,7 +43,7 @@ object.keys(obj).forEach((key) => {
 });
 ```
 
-:fa-check:
+:white_check_mark:
 
 ```javascript
 object.entries(obj).forEach(([key, value]) => {
