@@ -93,3 +93,16 @@ const Days = object.freeze({
 ```
 
 ---
+
+###### 6. Map on array of objects using ARRAY.FROM
+
+```javascript
+const avengers = [
+  { name: "Ironman", power: "Armor", id: 1 },
+  { name: "Thor", power: "Hammer", id: 2 },
+  { name: "Hulk", power: "Strength", id: 3 },
+];
+
+Array.from(avengers, ({ name }) => name);
+//["Ironman" ,"Thor" , "Hulk" ]
+```
