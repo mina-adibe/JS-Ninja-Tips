@@ -7,7 +7,9 @@ const user = await getUser();
 const product = await getProducts();
 ```
 
-[//]: # "Up to twice as fasr"
+<!--- Up to twice as faster --->
+
+[//]: # "Up to twice as faster"
 [//]: # "do"
 
 ```javascript
