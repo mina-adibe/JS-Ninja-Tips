@@ -75,3 +75,21 @@ function calIfCallable(callback){
 }
 });
 ```
+
+---
+
+###### 5. Enums in javascript
+
+```javascript
+const Days = object.freeze({
+  MONDAY: 0,
+  TUESDAY: 1,
+  WEDNESDAY: 2,
+  THURESDAY: 3,
+  FRIDAY: 4,
+  SATURDAY: 5,
+  SUNDAY: 6,
+});
+```
+
+---
