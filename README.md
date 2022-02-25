@@ -1,13 +1,13 @@
 ###### 1. await - promise.all
 
-:fa-times:
+:x:
 
 ```javascript
 const user = await getUser();
 const product = await getProducts();
 ```
 
-:fa-check:
+:white_check_mark:
 
 > Up to twice as faster
 
@@ -33,7 +33,7 @@ console.log(!!noGreeting); // returns false
 
 ###### 3. use object.entries to access both key and value
 
-:fa-times:
+:x:
 
 ```javascript
 object.keys(obj).forEach((key) => {
