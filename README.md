@@ -51,3 +51,27 @@ object.entries(obj).forEach(([key, value]) => {
   console.log(key, value);
 });
 ```
+
+---
+
+###### 4. Don't use optional function call
+
+:x:
+
+```javascript
+function calIfCallable(callback){
+  callback?.()
+}
+});
+```
+
+:white_check_mark:
+
+```javascript
+function calIfCallable(callback){
+ if(typeof callback === "function" ){
+  callback();
+ }
+}
+});
+```
