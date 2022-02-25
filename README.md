@@ -106,3 +106,19 @@ const avengers = [
 Array.from(avengers, ({ name }) => name);
 //["Ironman" ,"Thor" , "Hulk" ]
 ```
+
+---
+
+###### 7. Add to clipboard
+
+:x: no need to copy from the dom anymore
+
+```javascript
+document.execcommand("example of text ");
+```
+
+:white_check_mark: supported by all major browsers
+
+```javascript
+navigator.clipboard.writeText("example of text ");
+```
