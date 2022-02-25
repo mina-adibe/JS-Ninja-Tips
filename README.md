@@ -10,3 +10,5 @@ const product = await getProducts();
 ```javascript
 const [user, products] = await Promise.all([getUser(), getProducts()]);
 ```
+
+---
