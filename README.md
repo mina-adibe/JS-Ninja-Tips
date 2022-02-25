@@ -1,14 +1,10 @@
-###### 3. What's the output?
+###### 1. await - promise.all
 
 ```javascript
-const shape = {
-  radius: 10,
-  diameter() {
-    return this.radius * 2;
-  },
-  perimeter: () => 2 * Math.PI * this.radius,
-};
+const user = await getUser();
+const product = await getProducts();
+```
 
-console.log(shape.diameter());
-console.log(shape.perimeter());
+```javascript
+const [user, products] = await Promise.all([getUser(), getProducts()]);
 ```
