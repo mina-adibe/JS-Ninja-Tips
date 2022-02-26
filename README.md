@@ -123,6 +123,8 @@ document.execcommand("example of text ");
 navigator.clipboard.writeText("example of text ");
 ```
 
+---
+
 ###### 8. Number truncation in javascript
 
 ```javascript
