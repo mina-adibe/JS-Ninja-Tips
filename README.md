@@ -122,3 +122,17 @@ document.execcommand("example of text ");
 ```javascript
 navigator.clipboard.writeText("example of text ");
 ```
+
+###### 8. Number truncation in javascript
+
+```javascript
+const number = 80.6;
+// old ways
+number < 0 ? Math.ceil(number) : Math.floor(number);
+//80
+```
+
+```javascript
+const es6 = Math.turnc(number);
+//80
+```
