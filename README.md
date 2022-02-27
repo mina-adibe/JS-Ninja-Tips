@@ -138,3 +138,27 @@ number < 0 ? Math.ceil(number) : Math.floor(number);
 const es6 = Math.turnc(number);
 //80
 ```
+
+---
+
+###### 9. shorthand
+
+```javascript
+// old ways
+const cat = 'Milo';
+const dog = 'Coco';
+const someObject = {
+  cat: cat,
+  dog: dog,
+}
+```
+
+```javascript
+// es6
+const cat = 'Milo';
+const dog = 'Coco';
+const someObject = {
+  cat,
+  dog,
+}
+```
