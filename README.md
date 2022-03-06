@@ -188,7 +188,8 @@ greeting
 
 ```javascript
 // new ways
-// in async function you need to wrap your function in a try catch block - never work in async function without this
+// in async function you need to wrap your function in a try catch block
+// never work in async function without this
 
 async function doSomethingAsynchronous() {
   try {
@@ -208,11 +209,13 @@ async function doSomethingAsynchronous() {
 ```
 
 ```javascript
-// when returning a Promise inside an async function, you don’t need to use await
+// when returning a Promise inside an async function,
+// you don’t need to use await
 async function getGreeting() {
   return greeting;
 }
-// you do need to write return await if you’re looking to handle the Promise being rejected in a try...catch block.
+// you do need to write return await if you’re looking to handle
+// the Promise being rejected in a try...catch block.
 async function getGreeting() {
   try {
     return await greeting;
@@ -221,3 +224,5 @@ async function getGreeting() {
   }
 }
 ```
+
+---
