@@ -145,20 +145,79 @@ const es6 = Math.turnc(number);
 
 ```javascript
 // old ways
-const cat = 'Milo';
-const dog = 'Coco';
+const cat = "Milo";
+const dog = "Coco";
 const someObject = {
   cat: cat,
   dog: dog,
-}
+};
 ```
 
 ```javascript
 // es6
-const cat = 'Milo';
-const dog = 'Coco';
+const cat = "Milo";
+const dog = "Coco";
 const someObject = {
   cat,
   dog,
+};
+```
+
+---
+
+###### 10. async await VS then catch
+
+```javascript
+// old ways
+
+const greeting = new Promise((resolve, reject) => {
+  resolve("Hello!");
+});
+
+greeting
+  .then((value) => {
+    console.log("The Promise is resolved!", value);
+  })
+  .catch((error) => {
+    console.error("The Promise is rejected!", error);
+  })
+  .finally(() => {
+    console.log("The Promise is settled, meaning it has been resolved or rejected.");
+  });
+```
+
+```javascript
+// new ways
+// in async function you need to wrap your function in a try catch block - never work in async function without this
+
+async function doSomethingAsynchronous() {
+  try {
+    const value = await greeting;
+    console.log("The Promise is resolved!", value);
+  } catch((error) {
+    console.error("The Promise is rejected!", error);
+  } finally {
+    console.log(
+      "The Promise is settled, meaning it has been resolved or rejected."
+    );
+  }
+}
+
+
+
+```
+
+```javascript
+// when returning a Promise inside an async function, you don’t need to use await
+async function getGreeting() {
+  return greeting;
+}
+// you do need to write return await if you’re looking to handle the Promise being rejected in a try...catch block.
+async function getGreeting() {
+  try {
+    return await greeting;
+  } catch (e) {
+    console.error(e);
+  }
 }
 ```
