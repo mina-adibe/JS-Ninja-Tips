@@ -226,3 +226,29 @@ async function getGreeting() {
 ```
 
 ---
+
+###### 11. using if
+
+:x:
+
+```javascript
+if(
+    type == 1 ||
+    type == 2 ||
+    type == 3 ||
+    type == 4 ||
+){
+   //...
+}
+```
+
+:white_check_mark:
+
+```javascript
+const condition = [1, 2, 3, 4];
+if (condition.includes(type)) {
+  //...
+}
+```
+
+---
