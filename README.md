@@ -252,3 +252,26 @@ if (condition.includes(type)) {
 ```
 
 ---
+
+###### 12. using find instead of filter (optomization)
+
+:x:
+
+```javascript
+const a = [1, 2, 3, 4, 5];
+const result = a.filter((item) => {
+  return item === 3;
+});
+```
+
+:white_check_mark:
+
+<!-- performance optimization: If a qualifying item is found in the find method,
+it will not continue to traverse the array. -->
+
+```javascript
+const a = [1, 2, 3, 4, 5];
+const result = a.find((item) => item === 3);
+```
+
+---
