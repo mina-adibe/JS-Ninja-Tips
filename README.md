@@ -275,3 +275,23 @@ const result = a.find((item) => item === 3);
 ```
 
 ---
+
+###### 13. non-empty judgment
+
+:x:
+
+```javascript
+if (value !== null && value !== undefined && value !== "") {
+  //...
+}
+```
+
+:white_check_mark:
+
+ <!-- use the new null value coalescing -->
+
+```javascript
+if ((value ?? "") !== "") {
+  //...
+}
+```
