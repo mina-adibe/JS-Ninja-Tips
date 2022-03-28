@@ -295,3 +295,22 @@ if ((value ?? "") !== "") {
   //...
 }
 ```
+
+---
+
+###### 14. Conditionally add properties in a JavaScript Object
+
+```javascript
+const isValid = false;
+const age = 18;
+// we can use spread operator (...) to add properties in object
+const person = {
+  id: "adc",
+  name: "mina",
+  ...(isValid && { isActive: true }),
+  ...(age >= 18 && { cart: 0 }),
+};
+// output { id: "adc", name: "mina", cart: 0}
+```
+
+---
