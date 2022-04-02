@@ -363,3 +363,37 @@ console.log(b);
 ```
 
 ---
+
+###### 17. using Guard Clauses instead of if-else
+
+:x:
+
+```javascript
+function getInsuranceDeductible(insurance) {
+  if (insurance.covered) {
+    if (insurance.majorRepair) {
+      return 500;
+    } else if (insurance.mediumRepair) {
+      return 300;
+    } else {
+      return 100;
+    }
+  } else {
+    return 0;
+  }
+}
+```
+
+:white_check_mark:
+
+```javascript
+function getInsuranceDeductible(insurance) {
+  if (!insurance.covered) return 0;
+  if (insurance.majorRepair) return 500;
+  if (insurance.mediumRepair) return 300;
+
+  return 100;
+}
+```
+
+---
