@@ -314,3 +314,51 @@ const person = {
 ```
 
 ---
+
+###### 15. logical assignment operators p1
+
+```javascript
+// nullish coalescing asignment operator it will check whether or not a value is falsey and if it is , it will assign an other value to it
+const stats = { speed: 50 };
+stats.speed ??= 100;
+console.log(stats.speed);
+//output 50
+
+stats.color ??= "white";
+console.log(stats.color);
+// output white
+```
+
+---
+
+###### 16. logical assignment operators p2
+
+```javascript
+// OR & Equals (||=)
+// old way
+if (!user.id) {
+  user.id = 1;
+}
+user.id = user.id || 1;
+
+// new way
+user.id ||= 1;
+```
+
+```javascript
+// and & Equals (&&=)
+// The logical AND assignment (x &&= y) operator only assigns if x is truthy.
+// x &&= y is equivalent to x && (x = y);
+let a = 1;
+let b = 0;
+
+a &&= 2;
+console.log(a);
+// expected output: 2
+
+b &&= 2;
+console.log(b);
+// expected output: 0
+```
+
+---
