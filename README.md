@@ -318,7 +318,8 @@ const person = {
 ###### 15. logical assignment operators p1
 
 ```javascript
-// nullish coalescing asignment operator it will check whether or not a value is falsey and if it is , it will assign an other value to it
+// nullish coalescing asignment operator it will check whether
+// or not a value is falsey and if it is , it will assign an other value to it
 const stats = { speed: 50 };
 stats.speed ??= 100;
 console.log(stats.speed);
