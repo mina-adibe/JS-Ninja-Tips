@@ -435,8 +435,9 @@ people.reduce(
   }),
   {}
 );
-// javascript is actually going and creating a new object using Object.assign every single pass throught this reduce - o(n)cubed
-// it will be in  es2015 :
+// javascript is actually going and creating a new object using Object.assign
+// every single pass throught this reduce - o(n)cubed
+// it will be in  es2015 (check it with TSplayground ):
 people.reduce(
   (lookup, person) => Object.assign(Object.assign({}, lookup), { [person.id]: person }),
   {}
