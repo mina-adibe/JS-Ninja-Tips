@@ -31,12 +31,12 @@ console.log(!!noGreeting); // returns false
 
 ---
 
-###### 3. use object.entries to access both key and value
+###### 3. use Object.entries to access both key and value
 
 :x:
 
 ```javascript
-object.keys(obj).forEach((key) => {
+Object.keys(obj).forEach((key) => {
   const value = obj[key];
   // log out "key" and "value"
   console.log(key, value);
@@ -46,7 +46,7 @@ object.keys(obj).forEach((key) => {
 :white_check_mark:
 
 ```javascript
-object.entries(obj).forEach(([key, value]) => {
+Object.entries(obj).forEach(([key, value]) => {
   // log out "key" and "value"
   console.log(key, value);
 });
@@ -135,7 +135,7 @@ number < 0 ? Math.ceil(number) : Math.floor(number);
 ```
 
 ```javascript
-const es6 = Math.turnc(number);
+const es6 = Math.trunc(number);
 //80
 ```
 
