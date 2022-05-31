@@ -397,3 +397,59 @@ function getInsuranceDeductible(insurance) {
 ```
 
 ---
+
+###### 18. destructuring is slow
+
+:x:
+
+```javascript
+const numbers = [10, 20, 30, 40, 50];
+
+numbers.reduce((arr, v) => [...arr, v * 100], []);
+```
+
+:white_check_mark:
+
+```javascript
+numbers.reduce((arr, v) => {
+  arr.push(v * 100);
+  return arr;
+}, []);
+```
+
+## <!-- another example  -->
+
+:x:
+
+```javascript
+const people = [
+  { id: 1, name: "Jack" },
+  { id: 2, name: "Sally" },
+  { id: 3, name: "Joe" },
+];
+
+people.reduce(
+  (lookup, person) => ({
+    ...lookup,
+    [person.id]: person,
+  }),
+  {}
+);
+// javascript is actually going and creating a new object using Object.assign every single pass throught this reduce - o(n)cubed
+// it will be in  es2015 :
+people.reduce(
+  (lookup, person) => Object.assign(Object.assign({}, lookup), { [person.id]: person }),
+  {}
+);
+```
+
+:white_check_mark:
+
+```javascript
+people.reduce((lookup, person) => {
+  lookup[person.id] = person;
+  return lookup;
+}, {});
+```
+
+---
