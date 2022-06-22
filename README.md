@@ -454,3 +454,22 @@ people.reduce((lookup, person) => {
 ```
 
 ---
+
+### bitwise operators with `.splice` method
+
+:x:
+```javascript
+let list = [1, 2, 3, 4, 5];
+// `indexOf` here will return -1, and therefore the `.splice` method remove the last item that is `5` 
+list.splice(list.indexOf(6), 1); // [1, 2, 3, 4]
+```
+
+:white_check_mark:
+```javascript 
+let list = [1, 2, 3, 4, 5];
+/*
+  `indexOf` here will return -1 again, but in this time `>>>` ( Unsigned Right Shift Operator ) will convert `-1` to `4294967295` by shifting its bits
+  and therefore the `.splice` method will try to remove the number in the index `4294967295` that is not exist :sunglasses:.
+*/
+list.splice(list.indexOf(6) >>> 0, 1);
+```
