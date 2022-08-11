@@ -455,7 +455,7 @@ people.reduce((lookup, person) => {
 
 ---
 
-### bitwise operators with `.splice` method
+###### 19. bitwise operators with `.splice` method
 
 :x:
 ```javascript
@@ -472,4 +472,23 @@ let list = [1, 2, 3, 4, 5];
   and therefore the `.splice` method will try to remove the number in the index `4294967295` that is not exist :sunglasses:.
 */
 list.splice(list.indexOf(6) >>> 0, 1);
+```
+---
+
+###### 20. using `.at()` method
+
+:x:
+```javascript
+const list = [1, 2, 3, 4, 5];
+list[list.length-1]; // 5
+list[list.length-2]; // 4
+
+```
+
+:white_check_mark:
+```javascript 
+const list = [1, 2, 3, 4, 5];
+list.at(-1); // 5
+list.at(-2); // 4
+
 ```
