@@ -455,7 +455,7 @@ people.reduce((lookup, person) => {
 
 ---
 
-### bitwise operators with `.splice` method
+### 19. bitwise operators with `.splice` method
 
 :x:
 ```javascript
@@ -475,7 +475,7 @@ list.splice(list.indexOf(6) >>> 0, 1);
 ```
 ---
 
-### using `.at()` method
+### 20. using `.at()` method
 
 :x:
 ```javascript
