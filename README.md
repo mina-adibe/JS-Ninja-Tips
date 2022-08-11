@@ -473,3 +473,22 @@ let list = [1, 2, 3, 4, 5];
 */
 list.splice(list.indexOf(6) >>> 0, 1);
 ```
+---
+
+### using `.at()` method
+
+:x:
+```javascript
+const list = [1, 2, 3, 4, 5];
+list[list.length-1]; // 5
+list[list.length-2]; // 4
+
+```
+
+:white_check_mark:
+```javascript 
+const list = [1, 2, 3, 4, 5];
+list.at(-1); // 5
+list.at(-2); // 4
+
+```
