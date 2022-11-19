@@ -397,3 +397,49 @@ function getInsuranceDeductible(insurance) {
 ```
 
 ---
+
+###### 18. JavaScript URL API
+
+```javascript
+const url = new URL(
+  "https://user:pass@daily-dev-tips.com:3000/folder/page?param=xyz&new=true#title2"
+);
+
+const { origin, pathname, search, hostname } = url;
+
+//hostname :"daily-dev-tips.com"
+// origin :'https://daily-dev-tips.com:3000'
+// pathname : '/folder/page'
+// search : '?param=xyz&new=true's
+
+url.hash = "title4";
+url.pathname = "register";
+
+console.log(url.searchParams.get("param"));
+// xyz
+
+console.log(url.searchParams.get("new"));
+// true
+
+console.log(url.searchParams.getAll("param"));
+// ["xyz"]
+
+console.log(url.searchParams.has("param"));
+// true
+
+const keys = url.searchParams.keys();
+
+const values = url.searchParams.values();
+for (let value of values) {
+  console.log(value);
+}
+// xyz
+// true
+
+url.searchParams.append("search", "JavaScript");
+// search: "?param=xyz&new=true&search=JavaScript"
+
+// try : set - remove - sort
+```
+
+---
