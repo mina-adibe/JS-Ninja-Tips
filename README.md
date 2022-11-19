@@ -31,12 +31,12 @@ console.log(!!noGreeting); // returns false
 
 ---
 
-###### 3. use object.entries to access both key and value
+###### 3. use Object.entries to access both key and value
 
 :x:
 
 ```javascript
-object.keys(obj).forEach((key) => {
+Object.keys(obj).forEach((key) => {
   const value = obj[key];
   // log out "key" and "value"
   console.log(key, value);
@@ -46,7 +46,7 @@ object.keys(obj).forEach((key) => {
 :white_check_mark:
 
 ```javascript
-object.entries(obj).forEach(([key, value]) => {
+Object.entries(obj).forEach(([key, value]) => {
   // log out "key" and "value"
   console.log(key, value);
 });
@@ -135,7 +135,7 @@ number < 0 ? Math.ceil(number) : Math.floor(number);
 ```
 
 ```javascript
-const es6 = Math.turnc(number);
+const es6 = Math.trunc(number);
 //80
 ```
 
@@ -398,7 +398,105 @@ function getInsuranceDeductible(insurance) {
 
 ---
 
-###### 18. JavaScript URL API
+###### 18. destructuring is slow
+
+:x:
+
+```javascript
+const numbers = [10, 20, 30, 40, 50];
+
+numbers.reduce((arr, v) => [...arr, v * 100], []);
+```
+
+:white_check_mark:
+
+```javascript
+numbers.reduce((arr, v) => {
+  arr.push(v * 100);
+  return arr;
+}, []);
+```
+
+## <!-- another example  -->
+
+:x:
+
+```javascript
+const people = [
+  { id: 1, name: "Jack" },
+  { id: 2, name: "Sally" },
+  { id: 3, name: "Joe" },
+];
+
+people.reduce(
+  (lookup, person) => ({
+    ...lookup,
+    [person.id]: person,
+  }),
+  {}
+);
+// javascript is actually going and creating a new object using Object.assign
+// every single pass throught this reduce - o(n)cubed
+// it will be in  es2015 (check it with TSplayground ):
+people.reduce(
+  (lookup, person) => Object.assign(Object.assign({}, lookup), { [person.id]: person }),
+  {}
+);
+```
+
+:white_check_mark:
+
+```javascript
+people.reduce((lookup, person) => {
+  lookup[person.id] = person;
+  return lookup;
+}, {});
+```
+
+---
+
+###### 19. bitwise operators with `.splice` method
+
+:x:
+
+```javascript
+let list = [1, 2, 3, 4, 5];
+// `indexOf` here will return -1, and therefore the `.splice` method remove the last item that is `5`
+list.splice(list.indexOf(6), 1); // [1, 2, 3, 4]
+```
+
+:white_check_mark:
+
+```javascript
+let list = [1, 2, 3, 4, 5];
+/*
+  `indexOf` here will return -1 again, but in this time `>>>` ( Unsigned Right Shift Operator ) will convert `-1` to `4294967295` by shifting its bits
+  and therefore the `.splice` method will try to remove the number in the index `4294967295` that is not exist :sunglasses:.
+*/
+list.splice(list.indexOf(6) >>> 0, 1);
+```
+
+---
+
+###### 20. using `.at()` method
+
+:x:
+
+```javascript
+const list = [1, 2, 3, 4, 5];
+list[list.length - 1]; // 5
+list[list.length - 2]; // 4
+```
+
+:white_check_mark:
+
+```javascript
+const list = [1, 2, 3, 4, 5];
+list.at(-1); // 5
+list.at(-2); // 4
+```
+
+###### 21. JavaScript URL API
 
 ```javascript
 const url = new URL(
